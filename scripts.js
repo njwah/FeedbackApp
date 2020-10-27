@@ -122,7 +122,12 @@ function composeMessage(){
     } else {
         topicSentence = "";
     }
+    if (tname === "" || sname === "") {
+        output.innerHTML = "Names?";
+    } else {
     output.innerHTML = 'It was great seeing ' + sname + ' today! ' + subjectPronoun + ' did well. ' + topicSentence + ' ' + vocabMessage + criticism + ' ' + compliment + ' ' +  seeAgainMessage + 'Thank you very much for booking' + reviewMessage + ', and have a great day! Best, ' + tname;
+    }     
 }
+
 
 document.getElementById('submit').addEventListener('click', composeMessage);
