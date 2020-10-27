@@ -80,10 +80,10 @@ function composeMessage(){
         negatives.push("focusing")
     }
     if (respect.checked){
-        negatives.push("respecting the teacher")
+        negatives.push("showing respect to the teacher")
     }
     if (followDirections.checked){
-        negatives.push("followingDirections")
+        negatives.push("following directions")
     }
     let negativeString = negatives.join(" and ")
     if (negatives.length > 0) {
