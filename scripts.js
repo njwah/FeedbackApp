@@ -98,7 +98,7 @@ function composeMessage(){
     var vocab = document.getElementById('vocab').value;
     
     if (vocab !== "") {
-        vocabMessage = sname + " should review " + vocab + ". ";
+        vocabMessage = sname + " should review " + vocab.toLowerCase() + ". ";
     } 
 
     // see again
@@ -118,9 +118,11 @@ function composeMessage(){
 //topic
     
     if(topic !== "") {
-        topicSentence = ' We learned about ' + topic + ' in class today.';
+        topicSentence = ' We learned about ' + topic.toLowerCase() + ' in class today.';
     } else {
         topicSentence = "";
+
+//OUTPUT
     }
     if (tname === "" || sname === "") {
         output.innerHTML = "Names?";

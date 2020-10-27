@@ -57,6 +57,20 @@ input[type="text"]:focus {
     outline: none;
     background-color: transparent;
 }
+.sg-replace-icons input[type=radio]:checked + label:before,
+.sg-replace-icons input[type=radio]:checked + label span.sg-icon-target:before,
+.sg-replace-icons input[type=checkbox].sg-input-checkbox:checked + label:before,
+.sg-replace-icons input[type=checkbox].sg-input-checkbox:checked + label span.sg-icon-target:before
+{
+ color:gray; 
+}
+
+
+.sg-replace-icons input[type=radio]:checked,
+.sg-replace-icons input[type=checkbox].sg-input-checkbox:checked{
+ color: gray; 
+}
+
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
