@@ -21,6 +21,8 @@ function composeMessage(){
     var focus = document.getElementById('focus');
     var respect = document.getElementById('respect');
     var followDirections = document.getElementById('followdirections');
+
+    //gender
     for (var i = 0; i < gender.length; i++) {
         if (gender[i].checked) {
             genderValue = gender[i].value;
@@ -51,6 +53,8 @@ function composeMessage(){
             possPronoun ="their";
             
     }
+
+    //compliment
      
     if (enthusiasm.checked) {
         positives.push("enthusiasm");
@@ -64,6 +68,13 @@ function composeMessage(){
     if (workEthic.checked) {
         positives.push("work-ethic");
     }
+
+    var positiveString = positives.join(" and ");
+    if (positiveString !== "") {
+        compliment = "I liked " + possPronoun + " " + positiveString + ". ";
+    }
+
+    //criticism
 
     if (focus.checked){
         negatives.push("focusing")
@@ -81,16 +92,14 @@ function composeMessage(){
         criticism = "";
     }
 
-    var positiveString = positives.join(" and ");
+    
     // vocab
-    var vocabMessage;
+    var vocabMessage = "";
     var vocab = document.getElementById('vocab').value;
     
-    if (vocab !== null) {
+    if (vocab !== "") {
         vocabMessage = sname + " should review " + vocab + ". ";
-    } else {
-        vocabMessage = "";
-    }
+    } 
 
     // see again
     var seeAgainMessage = "";
@@ -106,14 +115,14 @@ function composeMessage(){
         reviewMessage =" and for the kind review "
     };
 
-
+//topic
     
-    if(topic !== null) {
+    if(topic !== "") {
         topicSentence = ' We learned about ' + topic + ' in class today.';
     } else {
         topicSentence = "";
     }
-    output.innerHTML = 'It was great seeing ' + sname + ' today! ' + subjectPronoun + ' did well. ' + topicSentence + ' ' + vocabMessage + criticism + ' I liked ' + possPronoun + ' ' + positiveString + ' in class today. ' + seeAgainMessage + 'Thank you very much for booking' + reviewMessage + ', and have a great day! Best, ' + tname;
+    output.innerHTML = 'It was great seeing ' + sname + ' today! ' + subjectPronoun + ' did well. ' + topicSentence + ' ' + vocabMessage + criticism + ' ' + compliment + ' ' +  seeAgainMessage + 'Thank you very much for booking' + reviewMessage + ', and have a great day! Best, ' + tname;
 }
 
 document.getElementById('submit').addEventListener('click', composeMessage);

@@ -10,15 +10,84 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: gray;
     line-height: 1.6;
-    max-width: 1100px;
+    max-width: 600px;
     margin: 0 auto;
+    padding: 0 20px;
+    background-color:#d1edf2;
 }
 
 h1 {
     font-weight: 600;
     line-height: 1.2;
+    margin: 10px 0;
+}
+
+p {
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: 1000;
+
 }
 
 #output {
     font-size: 20px;
+    height: 300px;
+    border: solid 1px gray;
+}
+
+.form-control{
+    margin: 15px 0;
+}
+
+input[type="text"] {
+    width: 300px;
+    font-size: 15px;
+    border: none;
+    border-bottom: solid 1px gray;
+    background-color: #d1edf2;
+    color: gray;
+    padding: 3px;
+}
+
+label{
+    font-size: 15px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    background-color: transparent;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #d1edf2 inset !important;
+    -webkit-text-fill-color: gray;
+}
+
+.container {
+    max-width: 600px;
+}
+
+.btn {
+    background-color: transparent;
+    border: solid 1px gray;
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:hover {
+    background-color: gray;
+    color: #d1edf2;
+}
+
+#vocab {
+    border: solid 1px gray;
+    border-radius: 3px;
 }
