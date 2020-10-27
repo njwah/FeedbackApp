@@ -112,7 +112,7 @@ function composeMessage(){
     var reviewMessage = "";
     var review = document.getElementById("review");
     if (review.checked) {
-        reviewMessage =" and for the kind review"
+        reviewMessage =" and for the kind review";
     };
 
 //topic
