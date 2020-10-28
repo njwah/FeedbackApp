@@ -32,8 +32,9 @@ p {
 
 #output {
     font-size: 20px;
-    height: 300px;
+    height: auto;
     border: solid 1px gray;
+    padding: 10px;
 }
 
 .form-control{

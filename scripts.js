@@ -71,7 +71,11 @@ function composeMessage(){
 
     var positiveString = positives.join(" and ");
     if (positiveString !== "") {
-        compliment = "I liked " + possPronoun + " " + positiveString + ". ";
+        if (positives.length > 1) {
+        compliment = "I liked " + possPronoun + " " + positiveString + ". These are important for success.";
+        } else if (positiveString.length === 1){
+            compliment = "I liked " + possPronoun + " " + positiveString + ". This is important for success.";
+        }
     }
 
     //criticism
@@ -87,7 +91,7 @@ function composeMessage(){
     }
     let negativeString = negatives.join(" and ")
     if (negatives.length > 0) {
-        criticism = "We are working on " + negativeString + "."
+        criticism = "We are working on " + negativeString + " so that " + sname + " can benefit from the lessons as much as possible."
     } else {
         criticism = "";
     }
@@ -98,14 +102,14 @@ function composeMessage(){
     var vocab = document.getElementById('vocab').value;
     
     if (vocab !== "") {
-        vocabMessage = sname + " should review " + vocab.toLowerCase() + ". ";
+        vocabMessage = sname + " should review " + vocab.toLowerCase() + " so that " + subjectPronoun.toLowerCase() + ' remembers in the next lesson!';
     } 
 
     // see again
     var seeAgainMessage = "";
     var seeAgain = document.getElementById("see-again");
     if (seeAgain.checked) {
-        seeAgainMessage ="I hope to see " + sname + " in class again soon! "
+        seeAgainMessage ="I hope to see " + objectPronoun + " in class again soon! "
     };
 
     // review
@@ -127,7 +131,7 @@ function composeMessage(){
     if (tname === "" || sname === "") {
         output.innerHTML = "Names?";
     } else {
-    output.innerHTML = 'It was great seeing ' + sname + ' today! ' + subjectPronoun + ' did well. ' + topicSentence + ' ' + vocabMessage + criticism + ' ' + compliment + ' ' +  seeAgainMessage + 'Thank you very much for booking' + reviewMessage + ', and have a great day! Best, ' + tname;
+    output.innerHTML = 'It was great seeing ' + sname + ' today! ' + subjectPronoun + ' did well. ' + topicSentence + ' ' + vocabMessage + ' ' + criticism + ' ' + compliment + ' ' + sname + '\'s good work earned ' + objectPronoun + ' 5 stars. ' +  seeAgainMessage + 'Thank you very much for booking' + reviewMessage + ', and have a great day! Best, Teacher ' + tname;
     }     
 }
 
